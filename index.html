@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<title>jarallax website</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<nav>
+
+	</nav>
+	<div class="section-1"></div>
+	<div class="section-2"></div>
+	<div class="section-3"></div>
+	<div class="section-4"></div>
+	<!--js libraries-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/jarallax-0.2.4b.min.js"></script>
+	<script type="text/javascript">
+    var jarallax = new Jarallax();
+    jarallax.setDefault('.section-2,.section-3,.section-4',{opacity:'0.3'})
+    jarallax.addAnimation('.section-1',[{progress:'0%',opacity:'1'},{progress:'40%',opacity:'0.3'}]);
+    jarallax.addAnimation('.section-2',[{progress:'0%',opacity:'0.3'},{progress:'90%',opacity:'1'}]);
+    jarallax.addAnimation('.section-3',[{progress:'40%',opacity:'0.5'},{progress:'70%',opacity:'1'},{progress:'100%',opacity:'1'}]);
+    jarallax.addAnimation('.section-4',[{progress:'70%',opacity:'0.5'},{progress:'100%',opacity:'1'}]);
+	</script>
+
+</body>
+</html>

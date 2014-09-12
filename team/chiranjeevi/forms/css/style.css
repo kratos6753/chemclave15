@@ -1,0 +1,39 @@
+body {
+	background: #60B7E1;
+}
+.container {
+	margin-top: 2%;
+}
+
+input[type="text"] {
+	border-style: none !important;
+	border-width: 0px !important;
+	background: none repeat scroll 0% 0% transparent !important;
+	letter-spacing: 0.15em;
+}
+
+::-webkit-input-placeholder {
+   color: #fff !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #fff !important;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff !important;  
+}
+
+:-ms-input-placeholder {  
+   color: #fff !important;  
+}
+
+.btn-custom {
+	color: #fff;
+	background: none repeat scroll 0% 0% transparent !important;
+	border: 1px solid #2D84AE;
+}
+
+.btn-custom:hover {
+	opacity: 0.6;
+}

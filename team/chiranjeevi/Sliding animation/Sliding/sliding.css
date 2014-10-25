@@ -1,0 +1,10 @@
+.speaker {
+    width: 108px;
+    height: 108px;
+    margin: 0px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    transform: rotate(-45deg);
+    transition: width 0.2s ease 0s, height 0.2s ease 0s, margin 0.2s ease 0s, opacity 0.2s ease 0s, top 0.3s ease-out 0s, left 0.3s ease-in-out 0s;
+}

@@ -1,0 +1,72 @@
+$width : 12rem;
+
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+body {
+  line-height:100vh; /* Center nav */
+  text-align:center;
+  background: linen;
+}
+
+nav {
+  display: inline-flex;
+  line-height: 5rem;
+  position: relative;
+}
+
+nav a,
+.slider {
+  transition: .5s;  
+}
+
+nav a {
+  display: inline-block;
+  font: 1.5rem/5rem "Oxygen";
+  width: ($width - 1rem);
+  position:relative;
+  z-index:100;
+  cursor: pointer;
+  user-select: none;
+  border: solid rgba(0,0,0,.15);
+  border-width: medium medium thick;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  margin: 0 .5rem;
+  color: rgba(0,0,0,.5);
+  
+  &:hover {
+    border-color: rgba(0,0,0,.4); 
+    color: rgba(0,0,0,.9);
+  }
+  
+  &:active {  
+    transition:0;
+    opacity:.2;
+  }
+  &:active ~ .slider {
+    transition: 0;
+    transform: rotate(1turn);
+  }
+  &:nth-child(odd):active ~ .slider {
+    transform: rotate(-1turn);
+  }
+}
+
+.slider {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top:0;
+  width: ($width - 1rem);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 1rem;
+  margin-left: .5rem;
+  background: orange;
+}
+
+a:nth-child(2):hover ~ .slider { left: 25%; background: gold; }
+a:nth-child(3):hover ~ .slider { left: 50%; background: limegreen; }
+a:nth-child(4):hover ~ .slider { left: 75%; background: deepskyblue; }
+
+//Works by declaring all the tabs and assigning them a class

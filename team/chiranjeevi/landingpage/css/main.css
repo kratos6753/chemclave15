@@ -26,7 +26,10 @@ h2.subtitle {
 }
 
 #countdown_dashboard {
+	margin-top: 60px;
 	height: 110px;
+	margin-right: 260px;
+	margin-left: 225px
 }
 
 .dash {

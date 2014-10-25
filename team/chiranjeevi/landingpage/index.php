@@ -18,6 +18,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Title Page</title>
+		<link rel="stylesheet" href="css/flipclock.css">
+
 
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900">
@@ -28,6 +30,11 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 
+			<script src="js/jquery.min.js"></script>
+
+		<script src="js/flipclock.js"></script>
+
+
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -35,7 +42,7 @@
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
+	<body >
 		<!-- Main site area -->
 		<div class="container">
 			<div class="row">
@@ -57,28 +64,34 @@
 							</form>	
 						</div>
 					</div>
+					
 					<!-- Countdown timer -->
 					<div id="countdown_dashboard">
-						<div class="dash days_dash">
-							<span class="dash_title">DAYS</span>
-							<span class="digit"><?=$date['days'][0]?></span>
-							<span class="digit"><?=$date['days'][1]?></span>
-						</div>
-						<div class="dash hours_dash">
-							<span class="dash_title">HOURS</span>
-							<span class="digit"><?=$date['hours'][0]?></span>
-							<span class="digit"><?=$date['hours'][1]?></span>
-						</div>
-						<div class="dash minutes_dash">
-							<span class="dash_title">MINUTES</span>
-							<span class="digit"><?=$date['mins'][0]?></span>
-							<span class="digit"><?=$date['mins'][1]?></span>	
-						</div>
-						<div class="dash seconds_dash">
-							<span class="dash_title">SECONDS</span>
-							<span class="digit"><?=$date['secs'][0]?></span>
-							<span class="digit"><?=$date['secs'][1]?></span>	
-						</div>
+						<div class="clock" style="margin:2em; text-align:center; "></div>
+	                <div class="message"></div>
+
+	                   <script type="text/javascript">
+		                 var clock;
+		
+		                $(document).ready(function() {
+			            var clock;
+
+			             clock = $('.clock').FlipClock({
+		                clockFace: 'DailyCounter',
+		                 autoStart: false,
+		                  callbacks: {
+		        	             stop: function() {
+		        	            	$('.message').html('The clock has stopped!')
+		        	                               }
+		                              }
+		                    });
+				    
+		                       clock.setTime(2208800);
+		                     clock.setCountdown(true);
+		                clock.start();
+
+		                       });
+	                      </script>
 					</div>
 					<!-- Countdown timer end-->
 				</div>
@@ -104,12 +117,14 @@
 
 		<!-- closing Footer -->
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
+
+		
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.lwtCountdown-1.0.js"></script>
 		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
+
 		<script type="text/javascript">
+		 
 			$(function(){
 				$.vegas( 'slideshow', {
 					delay: 8000,
@@ -124,22 +139,7 @@
 				});
 			});
 			
-			$(document).ready(function(){
-				$('#countdown').countDown({
-					targetDate:{
-						'day':    <?=$config['targetDate']['day']?>,
-						'month':  <?=$config['targetDate']['month']?>,
-						'year':   <?=$config['targetDate']['year']?>,
-						'hour':   <?=$config['targetDate']['hour']?>,
-						'min':    <?=$config['targetDate']['minute']?>,
-						'sec':    <?=$config['targetDate']['second']?>
-					},
-				});
-				/*Preloader*/
-				$(window).bind('load', function() {
-        			$('#preloader').fadeOut(1000);
-    			});
-			});
+			
 		</script>
 	</body>
 </html>

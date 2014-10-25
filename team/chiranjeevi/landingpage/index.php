@@ -17,7 +17,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
+		<title>Chemclave '15 | coming soon</title>
 		<link rel="stylesheet" href="css/flipclock.css">
 
 
@@ -29,6 +29,7 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.vegas.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
 			<script src="js/jquery.min.js"></script>
 
@@ -67,7 +68,7 @@
 					
 					<!-- Countdown timer -->
 					<div id="countdown_dashboard">
-						<div class="clock" style="margin:2em; text-align:center; "></div>
+						<div class="clock" style="text-align:center;"></div>
 	                <div class="message"></div>
 
 	                   <script type="text/javascript">
